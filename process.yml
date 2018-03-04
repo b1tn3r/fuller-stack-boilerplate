@@ -1,0 +1,19 @@
+# .yml scripts can be used as configuration files for pm2 startup scripts, in which in this script we are creating a config to manage multiple applications
+# These scripts can be written in YAML, JSON, or Javascript and a js sample process can be generated with 'pm2 ecosystem' to give a js config
+
+# Run this script with 'pm2 start process.yml' and it will run the multiple applications or whatever process is configured
+
+# Just a sample
+
+apps:
+  - script   : ./api.js
+    name     : 'api-app'
+    instances: 4
+    exec_mode: cluster
+  - script   : ./worker.js
+    name     : 'worker'
+    watch    : true
+    env      :
+        NODE_ENV: development
+    env_production:
+        NODE_ENV: production
