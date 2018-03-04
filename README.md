@@ -1,4 +1,4 @@
-# Isomorphic Full Stack Starter
+# Isomorphic Fuller Stack Starter App
 
 Client/server synchronized starter application with fully supported routing on the React Redux pattern with all content, routing, and websockets controlled from the Redux store.
 
