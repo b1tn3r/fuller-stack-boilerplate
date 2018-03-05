@@ -31,4 +31,31 @@ test('sayHello dispatch', () => {
 });
 
 
-// Can create an asynchronous test for 'fetchContests' using fetchMock() to make a mock call to the API
+describe('fetchContests Action Suite', () => {
+    test('fetchContests success', (done) => {
+        // Setup mock interceptor
+        const myData = { contests: 'returned contest list' };
+        mock.onGet('/api/contests').reply(200, myData);
+
+        // Setup mock store
+        const initialState = {};
+        const store = mockStore(initialState);
+
+        // Dispatch action
+        store.dispatch(fetchContests());
+        const expectedActions = store.getActions();
+
+        // Test and Assert Results
+        expect(expectedActions.length).toBe(1);                                 // it should be '2' actions with PENDING and FULFILLED, but here we just settle for asserting PENDING is a dispatched action here
+        expect(expectedActions).toContainEqual({type: "FETCH_CONTESTS_PENDING"});
+
+        /*const expectedPayload = myData.contests;
+        expect(expectedActions).toContainEqual({        // this should be the second action that occurs in this test suite where PENDING is first and FULFILLED is second
+            type: "FETCH_CONTESTS_FULFILLED",
+            payload: {
+                contests: expectedPayload,
+            }
+        });*/
+        done();
+    })
+});
