@@ -16,7 +16,7 @@ import App from './App';
 
 import './theme/styles.scss';
 import './resources/favicon.ico';
-import './pages/home/large_size_image.jpg';
+//import './pages/home/large_size_image.jpg';
 
 /*// Importing Bootstrap JS in dependency tree          // this can be done in webpack.config though with the webpack.ProvidePlugin to load these packages upon building it so we can keep our code cleaner with less requires and imports
 import $ from 'jquery-slim';
