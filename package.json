@@ -6,7 +6,7 @@
     "private": true,
     "engines": {
         "node": "9.5.0",
-        "yarn": "5.6.0"
+        "npm": "5.6.0"
     },
     "scripts": {
         "clean": "rimraf public/",
