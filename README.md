@@ -1,5 +1,10 @@
 # Isomorphic Fuller Stack Starter App
 
+
+[![Build Status](https://img.shields.io/travis/b1tn3r/fuller-stack-starter-app.svg?style=flat-square)](https://travis-ci.org/b1tn3r/fuller-stack-starter-app)
+[![Coverage Status](https://img.shields.io/coveralls/b1tn3r/fuller-stack-starter-app.svg?style=flat-square)](https://coveralls.io/github/b1tn3r/fuller-stack-starter-app?branch=master)
+
+
 Client/server synchronized starter application with fully supported routing on the React Redux pattern with all content, routing, and websockets controlled from the Redux store.
 
 Several preconfigured options to choose from to make a plethora of different types of applications with different tools and UI libraries.
