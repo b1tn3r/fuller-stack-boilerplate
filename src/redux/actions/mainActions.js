@@ -16,7 +16,6 @@ function fetchContests() {
             dispatch({
                 type: "FETCH_CONTESTS_FULFILLED",
                 payload: {
-                    currentContestId: null,
                     contests: contests,
                 }
             });

@@ -1,4 +1,5 @@
-import fetchMock from 'fetch-mock'
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
 import configureStore from 'redux-mock-store'
 import thunkMiddleware from 'redux-thunk'
 
@@ -10,8 +11,9 @@ import {
 
 const mockStore = configureStore([thunkMiddleware]);   // creates a stand-in store that has redux-thunk functionality so we can make asynchronous calls if we need to do the test for 'fetchContests()'. This 'redux-mock-store' is used in place of making axios calls so our store data is not actually effected and so our test can focus on the logic within the action 'sayHello()' and not on external variables
 
+var mock = new MockAdapter(axios);      // creates the mock obj that we will use to intercept http requests (any type) with the functions 'onGet()', onPost(), onPut(), and onAny()
 afterEach(() => {
-    fetchMock.restore();                 // after each test, the normal behavior of fetchMock is restored to keep each test balanced in their results
+    mock.restore()                 // after each test, the normal behavior of the mock obj is restored to keep each test balanced in their results and to remove the mocking behavior set with mock.onGet() and such. We can also reset the registered mock handlers with 'mock.reset()'
 });
 
 test('sayHello dispatch', () => {

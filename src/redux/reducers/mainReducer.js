@@ -13,8 +13,12 @@ const initialState = Immutable.fromJS({     // initialState is cloned and is onl
 
 const reducer = function(state = initialState, action) {
     switch(action.type) {
+        // fetchContests action
         case "FETCH_CONTESTS_PENDING": {
-            return {...state, fetching: true};
+            return {
+                ...state,
+                fetching: true
+            };
         }
         case "FETCH_CONTESTS_FULFILLED": {
             return {...state,
@@ -30,6 +34,7 @@ const reducer = function(state = initialState, action) {
                 fetching: false,
             }
         }
+        // sayHello action
         case "SAY_HELLO": {
             return {
                 ...state,
