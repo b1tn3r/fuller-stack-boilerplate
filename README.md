@@ -23,6 +23,7 @@ Several preconfigured options to choose from to make a plethora of different typ
 * Styled-Components - inline CSS in JS
 * Mongoose on API - MongoDB Object Document Model
 * Validator and Serialize-Javascript - for validation and security against XSS
+* Jest testing with mock-store capabilities to test redux apparatus
 * Sass bundling and minify with sass-loader, css-loader, style-loader, extract-text-webpack-plugin, autoprefixer, precss, and postcss-loader
 * Image compress with image-wepack-loader, url-loader and file-loader
 * Option of using Pug Template Language for wrapper of frontend App or JS compiling of entire HTML document
