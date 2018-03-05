@@ -1,0 +1,32 @@
+import fetchMock from 'fetch-mock'
+import configureStore from 'redux-mock-store'
+import thunkMiddleware from 'redux-thunk'
+
+import {
+    sayHello,           // just testing 'sayHello()' here
+    fetchContests,          // fetchContests would need asynchronous redux-thunk capabilities within the mock-store to be able to be tested
+} from './mainActions'
+
+
+const mockStore = configureStore([thunkMiddleware]);   // creates a stand-in store that has redux-thunk functionality so we can make asynchronous calls if we need to do the test for 'fetchContests()'. This 'redux-mock-store' is used in place of making axios calls so our store data is not actually effected and so our test can focus on the logic within the action 'sayHello()' and not on external variables
+
+afterEach(() => {
+    fetchMock.restore();                 // after each test, the normal behavior of fetchMock is restored to keep each test balanced in their results
+});
+
+test('sayHello dispatch', () => {
+    const initialState = {};
+    const store = mockStore(initialState);           // creates mockStore with empty state to be used to dispatch 'sayHello()' action with a payload as the arg, which we will simply be dispatching and then using the store to getActions() and then test the sayHello action dispatched in the store to the action we originally dispatched with the 'actualPayload'
+
+    const actualPayload = "Hello Test";
+    store.dispatch(sayHello(actualPayload));        // dispatch sayHello() action to the mockStore which is simply just used as the holder for the action, which we will retrieve with getActions() to determine what the action looks like in the store compared to what we expected the outputted action to be {type:..., payload:...}
+
+    const expectedPayload = "Hello Test";
+    expect(store.getActions()).toEqual([{       // tests actualPayload found in our dispatched action here with store.getActions() and compare it against expectedPayload, which should both match up
+        type: "SAY_HELLO",
+        payload: expectedPayload
+    }]);
+});
+
+
+// Can create an asynchronous test for 'fetchContests' using fetchMock() to make a mock call to the API

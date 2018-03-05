@@ -1,19 +1,24 @@
 {
-    "name": "fuller-stack-starter",
+    "name": "fuller-stack-starter-app",
     "version": "1.0.0",
     "description": "Full Stack Redux application with routing capabilities and optimized performance with only a stand-in central app.",
+    "repository": "b1tn3r/fuller-stack-starter-app",
     "private": true,
     "scripts": {
         "clean": "rimraf public/",
+        "test": "jest --coverage",
         "dev": "better-npm-run build-dev",
         "start": "better-npm-run start-dev",
         "prod": "better-npm-run prod",
+        "prod-build": "better-npm-run build-prod",
         "prod-stop": "pm2 delete mainapp",
         "prod-list": "pm2 ls",
         "pretty-list": "pm2 prettylist",
         "prod-monitor": "pm2 monit",
         "prod-hot": "pm2 reload all",
         "max-processes": "pm2 ./server -i 0",
+        "precommit": "npm run test",
+        "prepush": "npm run test",
         "babel:start-dev": "nodemon ./server --exec babel-node --presets es2015,stage-2,react --ignore public/",
         "babel:build-prod ": "npm run clean && babel src -d lib/ --ignore .test.js",
         "babel:start-prod": "pm2 start ./lib/server && pm2 log"
@@ -34,6 +39,15 @@
                 "HOST": "127.0.0.1",
                 "NODE_PATH": ".",
                 "NODE_ENV": "development",
+                "PORT": 3000,
+                "APIPORT": 3030
+            }
+        },
+        "build-prod": {
+            "command": "webpack --progress",
+            "env": {
+                "NODE_PATH": ".",
+                "NODE_ENV": "production",
                 "PORT": 3000,
                 "APIPORT": 3030
             }
@@ -88,6 +102,7 @@
         "autoprefixer": "^8.1.0",
         "babel-cli": "^6.26.0",
         "babel-core": "^6.26.0",
+        "babel-jest": "^22.4.1",
         "babel-loader": "^7.1.2",
         "babel-plugin-add-module-exports": "^0.2.1",
         "babel-plugin-react-html-attrs": "^2.1.0",
@@ -106,8 +121,11 @@
         "css-loader": "^0.28.10",
         "extract-loader": "^1.0.2",
         "extract-text-webpack-plugin": "^3.0.2",
+        "fetch-mock": "^6.0.1",
         "file-loader": "^1.1.11",
+        "husky": "^0.14.3",
         "image-webpack-loader": "^4.1.0",
+        "jest": "^22.4.2",
         "jquery-slim": "^3.0.0",
         "json-loader": "^0.5.7",
         "node-sass": "^4.7.2",
@@ -118,6 +136,7 @@
         "precss": "^3.1.2",
         "prop-types": "^15.6.0",
         "react-hot-loader": "^4.0.0",
+        "redux-mock-store": "^1.5.1",
         "rimraf": "^2.6.2",
         "sass-loader": "^6.0.7",
         "style-loader": "^0.20.2",
@@ -141,6 +160,7 @@
             "transform-decorators-legacy"
         ],
         "env": {
+            "jest": true,
             "production": {
                 "plugins": [
                     "transform-react-constant-elements",
