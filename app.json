@@ -1,16 +1,21 @@
 {
-  "name": "fuller-stack-starter-app",
-  "scripts": {
-  },
-  "env": {
-    "NPM_CONFIG_PRODUCTION": "false"
-  },
-  "formation": {
-  },
-  "addons": [
+    "name": "fuller-stack-starter-app",
+    "description": "Full Stack Redux application with routing capabilities and optimized performance with only a stand-in central app hosted on Heroku",
+    "repository": "https://github.com/b1tn3r/fuller-stack-starter-app",
+    "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+    "keywords": ["node", "express", "heroku"],
+    "image": "heroku/nodejs",
+    "scripts": {
+    },
+    "env": {
+        "NPM_CONFIG_PRODUCTION": "false"
+    },
+    "formation": {
+    },
+    "addons": [
 
-  ],
-  "buildpacks": [
+    ],
+    "buildpacks": [
 
-  ]
+    ]
 }
