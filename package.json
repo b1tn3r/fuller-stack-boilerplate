@@ -11,8 +11,9 @@
     "scripts": {
         "clean": "rimraf public/",
         "test": "jest --coverage",
+        "start": "heroku local",
         "dev": "better-npm-run build-dev",
-        "start": "better-npm-run start-dev",
+        "dev-start": "better-npm-run start-dev",
         "prod": "better-npm-run prod",
         "prod-build": "better-npm-run build-prod",
         "prod-stop": "pm2 delete mainapp",

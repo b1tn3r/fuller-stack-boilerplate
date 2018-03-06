@@ -120,10 +120,10 @@ const browserConfig = {
                         loader: 'image-webpack-loader',         // compresses the images imported into the dependency tree and uses file-loader after to load them into public/images/ (the images won't be able to be viewed until opened on the web
                         options: {
                             // Default optimizers       // disabled by giving it a enabled:false property
-                            mozjpeg: {          // compress jpeg
+                            /*mozjpeg: {          // compress jpeg
                                 progressive: true,
                                 quality: 65
-                            },
+                            },*/
                             optipng: {          // compress png
                                 enabled: false,
                             },

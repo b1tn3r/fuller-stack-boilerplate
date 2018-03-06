@@ -8,7 +8,7 @@ var config = require('../server/config');
 
 
 
-mongoose.connect(config.mongodbUri + '/testDatabase');
+mongoose.connect(config.mongodbUri + '/titan-global-tech');
 var Schema = mongoose.Schema;
 
 var contestsSchema = new Schema({

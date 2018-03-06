@@ -16,9 +16,10 @@ import App from './App';
 
 import './theme/styles.scss';
 import './resources/favicon.ico';
-//import './pages/home/large_size_image.jpg';     // FIX compressed images - image-webpack-loader not rendering on Internet Explorer browser
+//import './pages/home/large_size_image.jpg';     // Travis-CI does not like image-webpack-loader so compress the images here and then comment the lines out once ready to push the project to Github/TravisCI
 
-/*// Importing Bootstrap JS in dependency tree          // this can be done in webpack.config though with the webpack.ProvidePlugin to load these packages upon building it so we can keep our code cleaner with less requires and imports
+/*
+// Importing Bootstrap JS in dependency tree          // this can be done in webpack.config though with the webpack.ProvidePlugin to load these packages upon building it so we can keep our code cleaner with less requires and imports
 import $ from 'jquery-slim';
 import Popper from 'popper';
 
