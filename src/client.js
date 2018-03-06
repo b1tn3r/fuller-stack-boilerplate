@@ -16,7 +16,7 @@ import App from './App';
 
 import './theme/styles.scss';
 import './resources/favicon.ico';
-import './pages/home/large_size_image.jpg';     // FIX compressed images - image-webpack-loader not rendering on Internet Explorer browser
+//import './pages/home/large_size_image.jpg';     // FIX compressed images - image-webpack-loader not rendering on Internet Explorer browser
 
 /*// Importing Bootstrap JS in dependency tree          // this can be done in webpack.config though with the webpack.ProvidePlugin to load these packages upon building it so we can keep our code cleaner with less requires and imports
 import $ from 'jquery-slim';
@@ -58,8 +58,8 @@ const store = createStore(
         config.isProd ? null : createLogger(),      // log only in dev
     ))
 );
-// Now we can dispatch navigation actions from anywhere with react-router-redux enabled
-// store.dispatch(push('/foo'))
+
+//store.dispatch(push('/about'));       // Now we can dispatch navigation actions from anywhere with react-router-redux enabled.. This should be done in <App/> though, otherwise if you do it here, it will only change the url but not push the location since ConnectedRouter is not setup yet
 
 
 
