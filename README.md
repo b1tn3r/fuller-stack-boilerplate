@@ -26,13 +26,20 @@ Several preconfigured options to choose from to make a plethora of different typ
 * Bootstrap-Material-Design with Custom Sass Configuration (instead of Bootstrap)
 * Material-UI (In addition or instead of Bootstrap)
 * Styled-Components - inline CSS in JS
-* Mongoose on API - MongoDB Object Document Model
+* Mongoose on REST API - MongoDB Object Document Model
 * Validator and Serialize-Javascript - for validation and security against XSS
 * Jest testing with mock-store and axios-mock-adapter capabilities to test the redux apparatus
 * Sass bundling and minify with sass-loader, css-loader, style-loader, extract-text-webpack-plugin, autoprefixer, precss, and postcss-loader
 * Image compress with image-wepack-loader, url-loader and file-loader
 * Option of using Pug Template Language for wrapper of frontend App or JS compiling of entire HTML document
 * PM2 - Advanced Node Process Manager
+
+
+## Versioning
+
+**Current** - Version 1.0
+
+This is the first version for this starter app. I imagine it will not be the only one. If I continue experimenting with this starter template, I will add in more optimization features such as Redis, an HTTP/2 server and possibly a switch from Mongoose to GraphQL with Apollo caching. 
 
 
 ## Authors
