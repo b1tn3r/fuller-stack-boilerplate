@@ -54,6 +54,45 @@ const browserConfig = {
     module: {
         rules: sharedLoaders.concat([
             /*{
+                test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader',
+                query: {
+                    limit: 10000,
+                    mimetype: 'application/font-woff'
+                }
+            },
+            {
+                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader',
+                query: {
+                    limit: '10000',
+                    mimetype: 'application/octet-stream'
+                }
+            },
+            {
+                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader'
+            },
+            {
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'svg-url-loader',
+                query: {
+                    limit: '10000',
+                    mimetype: 'application/svg+xml'
+                }
+            },
+            {
+                test: /\.(png|jpg)$/,
+                loader: 'url-loader',
+                query: {
+                    limit: 8192
+                }
+            },
+            {
+                test: /\.ico(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader'
+            },*/
+            /*{
                 test: /\.(png|jp(e*)g|svg|ico)$/,       // by having file-loader installed, it will be the default fallback for url-loader, and the 'file-loader' does not have to be declared since the 'query' options will be passed to it and it will have the same test as url-loader, and the file-loader is only used when the 'limit' is exceeded
                 use: [
                     {
@@ -99,9 +138,9 @@ const browserConfig = {
                                 interlaced: false,
                             },
                             // Only optional Optimizer      // enabled by simply putting them in the options like here
-                            webp: {                 // compress jpg and png into WEBP
-                                quality: 75
-                            }
+                            /*webp: {                 // compress jpg and png into WEBP
+                                quality: 75           // WEBP compressed images only work for webkit browsers (Chrome)
+                            }*/
                         }
                     }
                 ]

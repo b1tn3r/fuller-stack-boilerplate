@@ -18,7 +18,6 @@ class Contests extends React.Component {
     }
 
     render() {
-        console.log(this.props.contests);
         return (
             <div>
                 <ul class="list-group">

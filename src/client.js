@@ -16,7 +16,7 @@ import App from './App';
 
 import './theme/styles.scss';
 import './resources/favicon.ico';
-//import './pages/home/large_size_image.jpg';     // FIX compressed images - image-webpack-loader not rendering on Internet Explorer browser
+import './pages/home/large_size_image.jpg';     // FIX compressed images - image-webpack-loader not rendering on Internet Explorer browser
 
 /*// Importing Bootstrap JS in dependency tree          // this can be done in webpack.config though with the webpack.ProvidePlugin to load these packages upon building it so we can keep our code cleaner with less requires and imports
 import $ from 'jquery-slim';
@@ -72,7 +72,7 @@ ReactDOM.hydrate(
     , document.getElementById('root')
 );
 
-console.log(store);
+
 
 /*
  * Setup Socket.io on Client                // Socket.io setup on the 'store' should be at the very end of the file so it does not slow down the client side rendering of App, and does not interfere with the 'store' before it is sent into the Provider wrapper
