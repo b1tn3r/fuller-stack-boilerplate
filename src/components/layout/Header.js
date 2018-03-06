@@ -39,7 +39,7 @@ class Header extends React.Component {
                         {routes.map(link => (
                             <li key={link.path} class="nav-item p-2">
                                 <NavLink to={link.path} exact
-                                         activeStyle={{color: 'limegreen'}}
+                                         activeStyle={{color:'limegreen'}}
                                          onClick={this.handleNavLinkClick}
                                          class="nav-link">
                                     {link.label}

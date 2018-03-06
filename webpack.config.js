@@ -39,7 +39,7 @@ const browserConfig = {
         "react-hot-loader/patch",*/
         "./src/client.js"
     ] : [
-        /*"babel-polyfill",*/           // babel-polyfill is only needed if we use a library like 'isomorphic-fetch' which uses polyfills to make native calls with a global variable that is the same across the server and client. 'babel-polyfill' is needed to make the client code into a fully ES-6 environment for these polyfills to work, or else the isomorphic-fetch will not work on some browsers that do not support ES-6 yet. And it is only needed on the client since our server supports ES-6 and we are already transpiling that code into Node language for our express node server so that is already taken care of if we are using fetch()
+        "babel-polyfill",           // babel-polyfill is also needed to run transpiled App on Client in IE since Object.assign() is not supported in IE so a Symbol polyfill is required and we enable it to work here with 'babel-polyfill' to transpile it correctly and also it is needed if we use a library like 'isomorphic-fetch' which uses polyfills to make native calls with a global variable that is the same across the server and client. 'babel-polyfill' is needed to make the client code into a fully ES-6 environment for these polyfills to work, or else the isomorphic-fetch will not work on some browsers that do not support ES-6 yet. And it is only needed on the client since our server supports ES-6 and we are already transpiling that code into Node language for our express node server so that is already taken care of if we are using fetch()
         "./src/client.js"
     ],
     output: {
