@@ -123,7 +123,7 @@ const browserConfig = {
                             /*mozjpeg: {          // compress jpeg
                                 progressive: true,
                                 quality: 65
-                            },*/
+                            },
                             optipng: {          // compress png
                                 enabled: false,
                             },
@@ -136,7 +136,7 @@ const browserConfig = {
                             },
                             gifsicle: {         // compress gif
                                 interlaced: false,
-                            },
+                            },*/
                             // Only optional Optimizer      // enabled by simply putting them in the options like here
                             /*webp: {                 // compress jpg and png into WEBP
                                 quality: 75           // WEBP compressed images only work for webkit browsers (Chrome)
