@@ -11,7 +11,7 @@ var sourceMapSupport = require('source-map-support');    // allows for source-ma
 var apiRouter = require('./api/index');
 
 
-if(!config.isProd) {        // if in dev
+if(config.isDev) {           // if in dev
     sourceMapSupport.install();
 }
 

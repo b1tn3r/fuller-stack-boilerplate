@@ -1,7 +1,7 @@
 const env = process.env;
 
 module.exports = {
-    port: env.PORT || 3000,
+    port: env.PORT || 5000,
     host: env.HOST || '127.0.0.1',          // env.HOST is currently not existent but we can create it in our better-npm-run scripts and then input this config.HOST into our server/index.js file when we start the server with a HOST value
     get serverUrl() {
         return `http://${this.host}:${this.port}`;

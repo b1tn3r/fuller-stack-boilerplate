@@ -120,7 +120,7 @@ const browserConfig = {
                         loader: 'image-webpack-loader',         // compresses the images imported into the dependency tree and uses file-loader after to load them into public/images/ (the images won't be able to be viewed until opened on the web
                         options: {
                             // Default optimizers       // disabled by giving it a enabled:false property
-                            /*mozjpeg: {          // compress jpeg
+                            mozjpeg: {          // compress jpeg
                                 progressive: true,
                                 quality: 65
                             },
@@ -136,7 +136,7 @@ const browserConfig = {
                             },
                             gifsicle: {         // compress gif
                                 interlaced: false,
-                            },*/
+                            },
                             // Only optional Optimizer      // enabled by simply putting them in the options like here
                             /*webp: {                 // compress jpg and png into WEBP
                                 quality: 75           // WEBP compressed images only work for webkit browsers (Chrome)
