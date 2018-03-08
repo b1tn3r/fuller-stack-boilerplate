@@ -39,7 +39,7 @@ Several preconfigured options to choose from to make a plethora of different typ
 
 **Current** - Version 1.0
 
-This is the first version for this starter app. I imagine it will not be the only one. If I continue experimenting with this starter template, I will add in more optimization features such as Redis, an HTTP/2 server and possibly a switch from Mongoose to GraphQL with Apollo caching. 
+This is the first version for this starter app. I imagine it will not be the only one. If I continue experimenting with this starter template, I will add in more optimization features such as Redis, an HTTP/2 server, possibly a switch from Mongoose to GraphQL with Apollo caching, and setting up AWS SDK features to receive static assets from S3 remote storage.
 
 
 ## Authors
