@@ -3,6 +3,7 @@
 
 @import '~bootswatch/dist/darkly/variables';      // define bootswatch theme's variables first before our bootstrap config which will set all the colors, palette, and look for the theme
 @import './bootstrap/bootstrap';                // imports our bootstrap custom configuration
+//@import 'bootstrap-material-design/bootstrap-material-design';      // uses bootstrap-material-design instead of bootstrap, but this version already imports bootstrap in its config file, so it is just an enhanced version of normal bootstrap
 @import '~bootswatch/dist/darkly/bootswatch';       // overrides the bootstrap functionality that the theme (darkly) needs to function as intended (these include overwritten functions and such)
 
 
