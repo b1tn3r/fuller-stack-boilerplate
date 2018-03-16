@@ -175,6 +175,16 @@ const browserConfig = {
                     ]
                 })
             },
+            {
+                test: require.resolve('jquery'),     // required to define both '$' and 'jQuery' so they can be loaded into the dependency tree properly otherwise it will throw an error that '$' or 'jQuery' are not defined
+                use: [{
+                    loader: 'expose-loader',
+                    options: 'jQuery'
+                }, {
+                    loader: 'expose-loader',
+                    options: '$'
+                }]
+            },
         ])
     },
     devServer: {                                // the webpack-dev-server is ony used when you want to run the frontend React without the backend express server, but we can link it to the express server (if the express server is running on localhost:3000 by adding a proxy property configuration here to have the dev-server's localhost:8080 proxy to localhost:3000 for certain paths on each server
@@ -185,11 +195,6 @@ const browserConfig = {
         inline: true,
         headers: {
             'Access-Control-Allow-Origin': '*',     // necessary for hot module replacement. allows Cross-Origin Resource Sharing
-        },
-    },
-    resolve: {
-        alias: {
-            jquery: "node_modules/jquery/dist/jquery.min.js"
         },
     },
     plugins: dev ? [    // DEV
