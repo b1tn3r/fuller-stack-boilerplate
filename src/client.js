@@ -20,11 +20,14 @@ import './resources/favicon.ico';
 
 // Importing Bootstrap JS in dependency tree          // this can be done in webpack.config though with the webpack.ProvidePlugin to load these packages upon building it so we can keep our code cleaner with less requires and imports
 import $ from 'jquery';
-window.Popper = require('popper.js');
+window.Popper = require('popper.js').default;
 window.jQuery = $;
 window.$ = $;
 global.jQuery = $;
-const bootstrap = require('bootstrap');
+const bootstrap = require('bootstrap');             // configures bootstrap javascript
+
+//const bmd = require('bootstrap-material-design');     // configure project for bootstrap-material-design (js) instead of normal bootstrap. Still need popper.js and jquery, so only remove the require('bootstrap')
+//window.$('body').bootstrapMaterialDesign();
 
 
 
