@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { isSSR } from '../../../server/config';     // config function to check if App is being rendered on server-side, so we know to wrap third party libraries in isSSR() conditional so we do not get a 'window is not defined' error or similar
 import root from 'window-or-global';              // a simple package that is used in place of the 'window' reference and uses global instead. This works as a temporary fix where you can have SSR handle the reference root.navigator and it returns undefined so that client will just be the one to use it, however, if you wanted root.navigator.appName, it would throw an error since 'navigator' is already undefined, so this method is much more temporary than the 'isSSR()' function above that encapsulates entire code and omits everything inside of it unlike this method with window-or-global
 
+import Leaflet from './Leaflet';
 
 const title = 'About Page';     // 'title' value that we use for both setting the 'title' attr in Helmet to replace our 'defaultTitle' in Header's <Helmet/> with the 'titleTemplate' that requires a 'title' attr to use in place of '%s', and then 'title' will also go into a section of one of our meta tags
 
@@ -49,6 +50,7 @@ module.exports = class extends React.Component {
                     </a>
                 </div>
 
+                {/*____ Client Rendering Only ____*/}
 
                 {(global.window === undefined) ?
                     ''
@@ -62,6 +64,17 @@ module.exports = class extends React.Component {
 
                 {console.log(root.navigator)        // can only use SSR with 'navigator' and cannot actually retrieve any of navigator's inner object's or else SSR will throw an error since it is still rendering this code and not omitting it like above methods
                 }
+
+                {/*<NoSSR>          // can use 'react-no-ssr' library as well to render anything inside <NoSSR> tags as only rendering on Client so the Comments in <Comments/> will only show on client browser, and that is if:  import NoSSR from 'react-no-ssr'
+                        <Comments />
+                   </NoSSR>*/    }
+
+
+                {/* Manage a library more complex like react-leaflet */}
+                <div>
+                    <Leaflet />
+                </div>
+
             </div>
         )
     }
