@@ -21,7 +21,7 @@ import './resources/favicon.ico';
 // Importing Bootstrap JS in dependency tree          // this can be done in webpack.config though with the webpack.ProvidePlugin to load these packages upon building it so we can keep our code cleaner with less requires and imports
 import $ from 'jquery';
 window.Popper = require('popper.js').default;
-window.jQuery = $;
+window.jQuery = $;                                  // the libraries are assigned to 'window' here in client.js since the SSR does not go into client, and only client side rendering is done here, in which the user's browser is running this code from bundle.js locally in the browser so there is automatically access to 'window', 'document' and all the other properties of window like 'window.navigator' and the ones we set 'window.$' and 'window.Popper'
 window.$ = $;
 global.jQuery = $;
 const bootstrap = require('bootstrap');             // configures bootstrap javascript

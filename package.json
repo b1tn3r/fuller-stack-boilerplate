@@ -103,7 +103,8 @@
         "socket.io-client": "^2.0.4",
         "source-map-support": "^0.5.3",
         "styled-components": "^3.1.6",
-        "validator": "^9.4.1"
+        "validator": "^9.4.1",
+        "window-or-global": "^1.0.1"
     },
     "devDependencies": {
         "autoprefixer": "^8.1.0",

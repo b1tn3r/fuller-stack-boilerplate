@@ -27,4 +27,9 @@ module.exports = {
     IO_CLIENT_HELLO: 'client-hello',
     IO_CLIENT_JOIN_ROOM: 'client-join-room',            // event used by the client that is prefixed by 'IO_CLIENT' to signify it is an event to be utilized by client
     IO_SERVER_HELLO: 'server-hello',                    // event to be used by server by prefixing with 'IO_SERVER'
+
+    // If on Client/Server
+    isSSR(){                                                                                                // checks if current thread is being rendered from the server side, in which it is specifically checking if the current 'process' environment is being called from a Node env on the Node server, and if it is then the running thread is calling isSSR() from the node server, but if not, then it is being called from the the local browser client environment which is not a Node env. This is useful for encapsulating libraries in the App's JSX so that the 'window', 'document', '$', 'navigator', etc. global variables do not try to get rendered from server-side since it will throw a 'not defined' error if it tries to and the library is not pre-rendered on the server, in which complex libraries like Leaflet Maps can be rendered following instructions like these: "https://medium.com/@pimterry/building-a-server-rendered-map-component-part-2-using-client-side-libraries-6f1bb751f31c"
+        return (typeof process !== 'undefined') && (process.release) && (process.release.name === 'node');
+    },
 };
