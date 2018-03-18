@@ -3,7 +3,7 @@ import {
     fetchContests,
 } from '../actions/mainActions'
 
-import { mainReducer } from './mainReducer'
+import { mainReducer, helloSelector } from './mainReducer'
 
 // This test covers all the different Actions so it hsa full 100% coverage
 
@@ -84,3 +84,18 @@ test('handle FETCH_CONTESTS_REJECTED', () => {
     expect(mainState.fetched).toBe(false);
     expect(mainState.error.message).toBe("Error Object Test");    // tests the message property of the returned Error object from the State from the REJECTED action
 });
+
+
+// Hello Selector Test
+describe('hello Selector Suite', () => {
+    test('select default', () => {
+        let hello = helloSelector(mainState);
+        expect(hello).toBe(null);
+    });
+    test('select after sayHello action', () => {
+        mainState = mainReducer(mainState, sayHello("Hello Test"));
+        let hello = helloSelector(mainState);
+        expect(hello).toBe("Hello Test");
+    });
+});
+
