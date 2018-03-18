@@ -60,6 +60,15 @@ if(!config.isProd) {                                    // only use hot reloadin
 
 
 
+// Proxy API calls to API server
+/*
+import http_proxy from 'http-proxy'
+
+const proxy = http_proxy.createProxyServer({ target: `http://localhost:${config.apiPort}` });
+app.use('/api', (req, res) => proxy.web(req, res));
+*/
+
+
 // API
 app.use('/api', apiRouter);         // API is routed to before the server side rending of the App so that any requests with '/api/' path will be sent to the API route
 

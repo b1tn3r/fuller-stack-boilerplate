@@ -3,7 +3,7 @@ import {
     fetchContests,
 } from '../actions/mainActions'
 
-import mainReducer from './mainReducer'
+import { mainReducer } from './mainReducer'
 
 // This test covers all the different Actions so it hsa full 100% coverage
 

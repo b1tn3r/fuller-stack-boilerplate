@@ -1,7 +1,7 @@
 import { applyMiddleware, createStore } from 'redux';
 import Immutable from 'immutable';                  // Immutable should be used instead of {...state} syntax because Immutable will actually copy the object and all the various levels of inner objects and children so that the ENTIRE state is cloned
 
-const mainReducer = require('./reducers/mainReducer');
+const { mainReducer } = require('./reducers/mainReducer');
 const { reducers } = require('./reducers/index');     // combineReducers which includes only 'main' in its data tree (mainReducer)
 
 // Middleware Plugins

@@ -8,9 +8,6 @@ module.exports = {
     },
 
     apiPort: env.APIPORT || 3030,     // currently no in use (env.APIPORT is 3030 from better-npm-run tho)
-    get apiUrl() {
-        return `${this.serverUrl}/api`;
-    },
 
     isProd: env.NODE_ENV === 'production',
     isDev: env.NODE_ENV === 'development',

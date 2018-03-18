@@ -11,7 +11,7 @@ const initialState = Immutable.fromJS({     // initialState is cloned and is onl
     error: null,
 });
 
-const reducer = function(state = initialState, action) {
+const mainReducer = function(state = initialState, action) {      // set as 'main' Reducer on 'main' branch of the store
     switch(action.type) {
         // fetchContests action
         case "FETCH_CONTESTS_PENDING": {
@@ -46,4 +46,13 @@ const reducer = function(state = initialState, action) {
     return state;
 };
 
-module.exports = reducer;
+
+// Simple Selector                      // basic reusable selector for getting 'hello' value, in which a new state does not need to be created like in the dispatch 'main' function, and these selectors can be made complex to seriously reduce the amount of repeated code in the app
+const helloSelector = (mainState) => {        // can add 'mainState=initialState' if it is a selector that might be called on client startup
+    return mainState.hello;
+};
+
+module.exports = {
+    mainReducer,
+    helloSelector,
+};

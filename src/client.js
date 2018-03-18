@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import config from '../server/config';
 import { combineReducers, applyMiddleware, createStore, compose } from 'redux';
-import main from './redux/reducers/mainReducer';
+import { mainReducer } from './redux/reducers/mainReducer';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
@@ -11,7 +11,8 @@ import createHistory from 'history/createBrowserHistory';
 import { routerReducer, ConnectedRouter, routerMiddleware, push } from 'react-router-redux';
 
 
-import setupSocket from './socket';
+import { setupSocket } from './socket';
+
 import App from './App';
 
 import './theme/styles.scss';
@@ -46,7 +47,7 @@ const routerware = routerMiddleware(history);   // build the middleware using ou
 
 // Add routerReducer to our reducers
 const allReducers = combineReducers({
-    main: main,
+    main: mainReducer,
     router: routerReducer,     // add the routerReducer on the 'router' key for it to route properly and add with the rest of our 'reducers' that we add together by passing them all into 'combineReducers' including our already combined reducers that we add in with ...reducers
 });
 
