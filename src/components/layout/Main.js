@@ -17,8 +17,8 @@ var {
 
 
 const ConnectedSwitch = connect(state => ({     // keeps the routes in sync with the store where the routerReducer has the location and history controlled completely
-    location: state.location
-}))(Switch);
+    location: state.location                    // 'location' on the state is accessed directly from 'state' even though it is in the 'router' branch of the store
+}))(Switch);                        // decorates 'Switch' just as we do for Redux connected Classes
 
 module.exports = class extends React.Component {
     render() {

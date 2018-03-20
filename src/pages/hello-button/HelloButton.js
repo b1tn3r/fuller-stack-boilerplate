@@ -8,10 +8,11 @@ var { sayHello } = require('../../redux/actions/mainActions');
 import { sendHelloMsgToServer } from '../../socket';
 
 
-@connect(store => {         // the 'store' is the state or 'store.getState()' of 'store' from client.js
+// State to Props function          // if not a decorator it would be  module.exports = connect(stateToPropsFunc)(HelloButton)
+@connect(state => {         // the 'store' is the state or 'store.getState()' of 'store' from client.js
     return {
-        currentState: store,                 // gives the whole store's current 'state' including the 'main' branch and our 'router' branch we added with routerReducer and remotely control with our ConnectedRouter wrapper. The 'router' branch will always contain a 'location' property that says the current pathname, and other values like 'hash' and 'search' params (extensions on our url), state, and key
-        hello: store.main.hello,            // the server rendering passes the 'hello' String into the App as the initial value of 'Starting Message', but then the socket.io on the server sends the client a message that the store dispatches the sayHello() action to pass the serverMessage as the payload for the sayHello() action which changes this String to whatever the server sent the client over its socket with it, but then when we press the 'Say Hello' button on this page, it will change the payload again to the pre-defined String 'Hello!' that is defined here upon dispatching the action
+        currentState: state,                 // gives the whole store's current 'state' including the 'main' branch and our 'router' branch we added with routerReducer and remotely control with our ConnectedRouter wrapper. The 'router' branch will always contain a 'location' property that says the current pathname, and other values like 'hash' and 'search' params (extensions on our url), state, and key
+        hello: state.main.hello,            // the server rendering passes the 'hello' String into the App as the initial value of 'Starting Message', but then the socket.io on the server sends the client a message that the store dispatches the sayHello() action to pass the serverMessage as the payload for the sayHello() action which changes this String to whatever the server sent the client over its socket with it, but then when we press the 'Say Hello' button on this page, it will change the payload again to the pre-defined String 'Hello!' that is defined here upon dispatching the action
     }
 })
 class HelloButton extends React.Component {

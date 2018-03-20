@@ -30,6 +30,12 @@ const bootstrap = require('bootstrap');             // configures bootstrap java
 //const bmd = require('bootstrap-material-design');     // configure project for bootstrap-material-design (js) instead of normal bootstrap. Still need popper.js and jquery, so only remove the require('bootstrap')
 //window.$('body').bootstrapMaterialDesign();
 
+// uikit javascript import
+//import UIkit from 'uikit';
+//import Icons from 'uikit/dist/js/uikit-icons';
+
+//UIkit.use(Icons);                       // loads the Icons plugin so uikit icons can be used
+//UIkit.notification('UIkit Works');      // test if uikit works by using the UIkit reference
 
 
 const composeEnhancers = (config.isProd ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;

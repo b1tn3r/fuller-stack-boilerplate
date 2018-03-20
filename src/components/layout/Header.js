@@ -13,9 +13,9 @@ import {
 import {connect} from 'react-redux';
 
 
-@connect((store) => {
+@connect((state) => {
     return {
-        pageTitle: store.main.pageTitle,
+        pageTitle: state.main.pageTitle,
     }
 })
 class Header extends React.Component {

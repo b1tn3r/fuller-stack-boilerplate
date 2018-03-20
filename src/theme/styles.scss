@@ -1,15 +1,27 @@
+/* Custom Variables */
+@import './bootstrap/variables';       // custom bootstrap variables  -  if you want our custom _variables to override the darkly theme variables
 
-@import './bootstrap/variables';       // if you want our custom _variables to override the darkly theme variables
+/* Theme Wrapper */
+@import '~bootswatch/dist/darkly/variables';                   // theme variables          -  define bootswatch theme's variables first before our bootstrap config which will set all the colors, palette, and look for the theme
 
-@import '~bootswatch/dist/darkly/variables';      // define bootswatch theme's variables first before our bootstrap config which will set all the colors, palette, and look for the theme
-@import './bootstrap/bootstrap';                // imports our bootstrap custom configuration
-//@import 'bootstrap-material-design/bootstrap-material-design';      // uses bootstrap-material-design instead of bootstrap, but this version already imports bootstrap in its config file, so it is just an enhanced version of normal bootstrap
-@import '~bootswatch/dist/darkly/bootswatch';       // overrides the bootstrap functionality that the theme (darkly) needs to function as intended (these include overwritten functions and such)
+/* Uikit Variables */
+//@import '~uikit/src/scss/variables-theme';                    // uikit's variables if you want to use it with bootstrap but keep uikit's theme variables
+
+/* Core Imports */
+@import 'bootstrap/bootstrap';                                // bootstrap  -  imports our bootstrap custom configuration
+//@import 'bootstrap-material-design/bootstrap-material-design';  // bmd        -  uses bootstrap-material-design instead of bootstrap, but this version already imports bootstrap in its config file, so it is just an enhanced version of normal bootstrap
+//@import 'uikit/uikit';                                        // uikit      -  separate from bootstrap and bmd and is just an additional library to use with numerous components like parallax, sticky, countdown, sortable, spinner, overlay, thumbnav, scroll, and others. If you want to import the theme variables for it place this in front of bootstrap-material-design import:  @import '~uikit/src/scss/variables-theme';
+
+/* Theme Wrapper */
+@import '~bootswatch/dist/darkly/bootswatch';                  // theme functionality      -  overrides the bootstrap functionality that the theme (darkly) needs to function as intended (these include overwritten functions and such)
 
 
+// Pages Styles
+@import '../pages/home/Home';
 
-
+// Components/Layout Styles
 @import 'footer';
+
 
 body {
     padding: 50px;

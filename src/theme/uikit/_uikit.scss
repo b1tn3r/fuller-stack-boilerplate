@@ -1,0 +1,26 @@
+// ---------------------------------------------------------
+// Variables
+// ---------------------------------------------------------
+
+@import './variables';                          // custom variables  (uncomment and replace with custom values)
+@import '~uikit/src/scss/variables-theme';      // uikit default variables
+
+
+
+
+/* --------------------------------------------------------
+   Mixins
+   --------------------------------------------------------- */
+
+//@import '~uikit/src/scss/mixins-theme';        // default mixins (only needed if you want to use local _mixins.scss for customized use)
+@import './mixins';                            // all mixins here so we can comment out any not in use (this is a large file, so it might be worth it to go through and comment out unused code)
+
+
+
+
+
+/* --------------------------------------------------------
+   Core CSS
+   --------------------------------------------------------- */
+
+@import './components';                       // our custom imported components (comment out any components not in use to save space)
