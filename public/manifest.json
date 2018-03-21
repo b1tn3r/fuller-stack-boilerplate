@@ -1,0 +1,16 @@
+{
+    "name": "Fuller Stack Template",
+    "short_name": "Fuller Stack",
+    "description": "Write your description here.",
+    "background_color": "#121212",
+    "theme_color": "#32CD32",
+    "display": "standalone",
+    "Scope": "/",
+    "start_url": "/",
+    "icons": [{
+        "src": "icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }],
+    "splash_pages": null
+}

@@ -8,6 +8,10 @@ module.exports = {
     },
 
     apiPort: env.APIPORT || 3030,     // currently no in use (env.APIPORT is 3030 from better-npm-run tho)
+    tempApiPort: 3000,                  // change this to apiPort once proxy is set up
+    get apiUrl() {
+        return `http://${this.host}:${this.tempApiPort}/api`;       // setups up the url that the api is located at and used as a shortcut for our fetch api scripts to retrieve data
+    },
 
     isProd: env.NODE_ENV === 'production',
     isDev: env.NODE_ENV === 'development',

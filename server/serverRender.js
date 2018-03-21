@@ -30,8 +30,18 @@ const serverRender = function(location, partialState, routerContext = {}) {     
         `<!doctype html>
         <html>
             <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
                 ${head.title}
                 ${head.meta}
+                
+                <!-- Allow installing the app to the homescreen -->
+                <link rel="manifest" href="/manifest.json">
+                <meta name="mobile-web-app-capable" content="yes">
+                <!-- iOS home screen icons -->
+                <meta name="apple-mobile-web-app-title" content="fuller stack template">
+                <link rel="apple-touch-icon" sizes="192x192" href="images/icon-192x192.png">
+                
                 <link rel='stylesheet' href="${isProd ? `/stylesheets/styles.css` : ``}">
             </head>
             <body>
