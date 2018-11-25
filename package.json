@@ -4,6 +4,12 @@
     "description": "Full Stack Redux application with routing capabilities and optimized performance with only a stand-in central app.",
     "repository": "b1tn3r/fuller-stack-starter-app",
     "private": true,
+    "greenkeeper": {
+        "ignore": [
+          "webpack",
+          "webpack-node-externals"
+        ]
+    }
     "engines": {
         "node": "9.5.0",
         "npm": "5.6.0"
