@@ -1,7 +1,7 @@
 # Isomorphic Fuller Stack Starter App
 
 
-<[![Build Status](https://travis-ci.org/b1tn3r/fuller-stack-boilerplate.svg?branch=master)](https://travis-ci.org/b1tn3r/fuller-stack-starter-app)>
+[comment]: <[![Build Status](https://travis-ci.org/b1tn3r/fuller-stack-boilerplate.svg?branch=master)](https://travis-ci.org/b1tn3r/fuller-stack-starter-app)>
 [![Coverage Status](https://img.shields.io/coveralls/b1tn3r/fuller-stack-starter-app.svg?style=flat-square)](https://coveralls.io/github/b1tn3r/fuller-stack-starter-app?branch=master)
 [![dependencies Status](https://david-dm.org/b1tn3r/fuller-stack-starter-app/status.svg)](https://david-dm.org/b1tn3r/fuller-stack-starter-app)
 [![devDependencies Status](https://david-dm.org/b1tn3r/fuller-stack-starter-app/dev-status.svg)](https://david-dm.org/b1tn3r/fuller-stack-starter-app?type=dev)
